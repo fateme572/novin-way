@@ -2,12 +2,25 @@
   <div v-if="apiIsLoaded">
     <v-row>
       <v-col cols="12">
-        <div class="task-bar">
-          <button>back</button>
-          <div>
-            <p>{{ movie.title }}</p>
-            <p>{{ movie.tagline }}</p>
-          </div>
+        <div class="task-bar px-10">
+          <v-row align="center">
+            <v-col cols="auto">
+              <v-btn
+                rounded
+                color="#549df2"
+                class="white--text"
+                elevation
+                @click="$router.go(-1)"
+              >
+                <v-icon left>mdi-arrow-left</v-icon>
+                back
+              </v-btn>
+            </v-col>
+            <v-col cols="8" class="pl-9">
+              <h2>{{ movie.title }}</h2>
+              <p class="text-h6 mb-0">{{ movie.tagline }}</p>
+            </v-col>
+          </v-row>
         </div>
       </v-col>
     </v-row>
@@ -40,7 +53,17 @@
       </v-col>
       <v-col>
         <h3>Credit:</h3>
-        <h6></h6>
+        <p class="text-body-2">
+          <span
+            v-for="(credit, index) in sortedCreditsByPopularity.slice(0, 10)"
+            :key="index"
+          >
+            {{ credit.name }} ,
+          </span>
+          <span v-if="sortedCreditsByPopularity.length > 10">
+            and {{ sortedCreditsByPopularity.length - 10 }} more.
+          </span>
+        </p>
       </v-col>
     </v-row>
   </div>
