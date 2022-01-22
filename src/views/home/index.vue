@@ -8,9 +8,15 @@
               <date-picker :range-date.sync="rangeReleaseDate"></date-picker>
             </v-col>
             <v-col cols="3">
-              <button class="btn--search" @click="filterByReleaseDate()">
+              <v-btn
+                color="#549df2"
+                elevation
+                rounded
+                class="white--text"
+                @click="filterByReleaseDate()"
+              >
                 search
-              </button>
+              </v-btn>
             </v-col>
           </v-row>
         </div>
