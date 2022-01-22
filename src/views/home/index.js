@@ -57,7 +57,6 @@ export default {
                 const { data } = res
                 this.movies = data.results;
                 this.page = data.page;
-                console.log(res);
                 this.apiIsLoaded = true;
                 loader.hide();
             });
