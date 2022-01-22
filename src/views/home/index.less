@@ -1,0 +1,46 @@
+.task-bar {
+    border-radius: 10px;
+    background-color: #e2e2e2;
+    padding: 12px;
+    margin-bottom: 100px;
+
+    .btn--search {
+        background-color: #549df2;
+        color: white;
+        border-radius: 30px;
+        padding: 5px 15px;
+    }
+}
+
+.movie-cards {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    &::v-deep {
+        .movie-card {
+            flex: calc((100% / 3) - 60px);
+        }
+    }
+}
+
+.pagination {
+    margin-top: 100px !important;
+
+    &>div {
+        padding: 12px 20px;
+        color: #318fe7;
+
+        &:first-child {
+            border-right: 1px solid #6a6a6a;
+        }
+
+        button:disabled {
+            color: #858585;
+        }
+    }
+}
+
+.indexes {
+    color: #989898;
+}

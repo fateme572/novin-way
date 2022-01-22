@@ -1,0 +1,36 @@
+.movie-card {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 1px solid #c4c4c4;
+    padding: 2px;
+    overflow: hidden;
+
+    &__content {
+        width: 60%;
+        height: 100%;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__details {
+            color: #626262;
+        }
+    }
+
+    &__image {
+        width: 40%;
+        height: 100%;
+
+        .v-image {
+            border-radius: 10px 0 0 10px;
+            height: 100%;
+        }
+    }
+
+    &>div {
+        float: right;
+    }
+}
