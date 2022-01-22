@@ -23,8 +23,8 @@ export default {
             if (this.apiIsLoaded) {
                 const movie = this.movie
                 return {
-                    'Budget': movie.budget,
-                    'Revenue': movie.revenue,
+                    'Budget': `${movie.budget}$`,
+                    'Revenue': `${movie.revenue}$`,
                     'Release Date': movie.release_date,
                     'Runtime': movie.runtime,
                     'Score': movie.vote_average,
@@ -32,6 +32,9 @@ export default {
                     'Homepage Link': movie.homepage,
                 }
             }
+        },
+        sortedCreditsByPopularity() {
+            return this.credits.cast.sort((a, b) => b.popularity - a.popularity)
         }
     },
     methods: {
